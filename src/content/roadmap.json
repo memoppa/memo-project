@@ -1,0 +1,32 @@
+[
+    {
+        "year": "2023 - 2024",
+        "title": "Consolidación Nacional",
+        "desc": "Podios en Juegos CONADE y clasificación a Mundiales de Grupos por Edad.",
+        "status": "completed"
+    },
+    {
+        "year": "2025",
+        "title": "Internacionalización",
+        "desc": "Mundial Pontevedra (España) y debut en circuitos continentales junior.",
+        "status": "current"
+    },
+    {
+        "year": "2026 - 2027",
+        "title": "Transición a Élite",
+        "desc": "Ingreso al ranking mundial ITU y consolidación en categoría Sub-23.",
+        "status": "upcoming"
+    },
+    {
+        "year": "2028",
+        "title": "Ciclo Olímpico LA28",
+        "desc": "Primera búsqueda de clasificación olímpica y experiencia en Copas del Mundo.",
+        "status": "future"
+    },
+    {
+        "year": "2032",
+        "title": "Brisbane 2032",
+        "desc": "Objetivo Principal: Representar a México en los Juegos Olímpicos.",
+        "status": "goal"
+    }
+]

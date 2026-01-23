@@ -1,0 +1,17 @@
+{
+  "name": "Memo Pérez",
+  "project_name": "Memo Project",
+  "tagline": "Triatlón de Alto Rendimiento",
+  "description": "Memo Project es la estructura profesional detrás de un sueño olímpico. Disciplina, ciencia y pasión para llevar a México al podium mundial.",
+  "olympic_goal": "Brisbane 2032",
+  "socials": {
+    "instagram": "https://instagram.com/memoperez",
+    "twitter": "https://twitter.com",
+    "email": "hola@memoproject.com"
+  },
+  "images": {
+    "hero_video": "/img/hero-bg.mp4",
+    "hero_poster": "/img/hero-static.jpg",
+    "story_main": "/img/story-main.jpg"
+  }
+}

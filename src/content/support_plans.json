@@ -1,0 +1,46 @@
+[
+    {
+        "id": "monthly",
+        "title": "Impulso Mensual",
+        "price": "$200",
+        "period": "/ mes",
+        "icon": "Heart",
+        "features": [
+            "Mención en web",
+            "Newsletter mensual",
+            "Acceso a grupo exclusivo"
+        ],
+        "cta": "Unirse al equipo",
+        "highlight": false
+    },
+    {
+        "id": "event",
+        "title": "Padrino de Competencia",
+        "price": "$1,500",
+        "period": "/ evento",
+        "icon": "Trophy",
+        "features": [
+            "Logo en redes durante evento",
+            "Video de agradecimiento",
+            "Mención especial",
+            "Reporte de resultados"
+        ],
+        "cta": "Apoyar Evento",
+        "highlight": true
+    },
+    {
+        "id": "partner",
+        "title": "Aliado Bronce/Plata",
+        "price": "A medida",
+        "period": "",
+        "icon": "Zap",
+        "features": [
+            "Presencia de marca en uniforme",
+            "Activaciones presenciales",
+            "Deducibilidad de impuestos",
+            "Colaboración a largo plazo"
+        ],
+        "cta": "Contactar para Alianza",
+        "highlight": false
+    }
+]

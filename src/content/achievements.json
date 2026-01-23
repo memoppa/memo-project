@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Mundial Grupos por Edad",
+        "event": "Campeonato Mundial Pontevedra",
+        "date": "2023",
+        "result": "Top 15",
+        "location": "España",
+        "highlight": true
+    },
+    {
+        "id": 2,
+        "title": "Podio Nacional",
+        "event": "Juegos CONADE",
+        "date": "2024",
+        "result": "Medalla de Plata",
+        "location": "México",
+        "highlight": true
+    },
+    {
+        "id": 3,
+        "title": "Clasificación Continental",
+        "event": "Copa Continental Junior",
+        "date": "2025",
+        "result": "Qualifer",
+        "location": "Ixtapa",
+        "highlight": false
+    }
+]

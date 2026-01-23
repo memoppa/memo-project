@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Marca Deportiva A",
+        "logo": "",
+        "tier": "gold",
+        "active": false
+    },
+    {
+        "id": 2,
+        "name": "Nutrición B",
+        "logo": "",
+        "tier": "silver",
+        "active": false
+    }
+]
