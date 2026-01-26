@@ -74,7 +74,7 @@ const Footer = () => {
                         fontSize: '0.85rem',
                         color: '#444'
                     }}>
-                        <p>© 2024 Memo Project. Todos los derechos reservados.</p>
+                        <p>&copy; {new Date().getFullYear()} Memo Project. Todos los derechos reservados.</p>
                         <p>Diseñado para el Alto Rendimiento.</p>
                     </div>
                 </div>
