@@ -1,21 +1,37 @@
 import React, { useState } from 'react';
-import { useForm } from '@formspree/react';
-import { useForm as useHookForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Send, Check } from 'lucide-react';
-import { FORMSPREE_CONFIG } from '../../config';
 
 const NewsletterForm = () => {
-    const [state, handleSubmit] = useForm(FORMSPREE_CONFIG.NEWSLETTER_FORM_ID);
-    const { register, handleSubmit: hookSubmit, formState: { errors } } = useHookForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [submitting, setSubmitting] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
 
-    const onSubmit = (data) => {
-        handleSubmit(data).then(() => {
+    const onSubmit = async (data) => {
+        setSubmitting(true);
+        try {
+            // Encode data for Netlify
+            const encode = (data) => {
+                return Object.keys(data)
+                    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+                    .join("&");
+            };
+
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "newsletter", ...data })
+            });
+
             setShowSuccess(true);
-        });
+            setSubmitting(false);
+        } catch (error) {
+            console.error("Form error:", error);
+            setSubmitting(false);
+        }
     };
 
-    if (state.succeeded || showSuccess) {
+    if (showSuccess) {
         return (
             <div style={{
                 padding: '20px',
@@ -34,7 +50,20 @@ const NewsletterForm = () => {
     }
 
     return (
-        <form onSubmit={hookSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <form
+            name="newsletter"
+            method="POST"
+            data-netlify="true"
+            onSubmit={handleSubmit(onSubmit)}
+            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+        >
+            <input type="hidden" name="form-name" value="newsletter" />
+
+            {/* Honeypot */}
+            <div hidden>
+                <input name="bot-field" />
+            </div>
+
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                 Recibe avances reales del proyecto, competencias y camino internacional.
             </p>
@@ -55,11 +84,11 @@ const NewsletterForm = () => {
                 />
                 <button
                     type="submit"
-                    disabled={state.submitting}
+                    disabled={submitting}
                     className="btn btn-primary"
                     style={{ padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                    {state.submitting ? '...' : <Send size={18} />}
+                    {submitting ? '...' : <Send size={18} />}
                 </button>
             </div>
             {errors.email && <span style={{ color: '#ef4444', fontSize: '0.8rem' }}>Email inválido</span>}

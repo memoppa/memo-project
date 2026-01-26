@@ -7,7 +7,10 @@ const Sponsors = () => {
     return (
         <section id="sponsors" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
             <div className="container" style={{ textAlign: 'center' }}>
-                <h2 style={{ fontSize: '2rem', marginBottom: '40px', opacity: 0.8 }}>Alianzas Estratégicas</h2>
+                <h2 style={{ fontSize: '2rem', marginBottom: '16px', opacity: 0.9 }}>Alianzas Estratégicas</h2>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px auto' }}>
+                    Memo Project busca marcas que entiendan que el alto rendimiento se construye, no se improvisa.
+                </p>
 
                 <div style={{
                     display: 'flex',

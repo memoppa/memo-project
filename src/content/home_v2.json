@@ -1,0 +1,74 @@
+{
+    "hero": {
+        "h1": "No es un sueño.\nEs un proyecto de alto rendimiento.",
+        "subheadline": "Memo Project es la construcción consciente de un atleta de nivel internacional desde México, con disciplina, estructura y visión olímpica.",
+        "cta_primary": "Explorar el Proyecto",
+        "cta_secondary": "Impulsar Memo Project",
+        "chips": [
+            "+33 horas de entrenamiento",
+            "Triatlón · Proyección élite",
+            "Clasificado a Mundiales",
+            "Road to 2032"
+        ]
+    },
+    "manifesto": {
+        "headline": "La mayoría ve el resultado.\nPocos entienden el proceso.",
+        "body": [
+            "Memo Project nace de una decisión: dejar de ver el alto rendimiento como un golpe de suerte y empezar a construirlo como un sistema.",
+            "Aquí no hay atajos.",
+            "Hay disciplina diaria.",
+            "Hay estructura.",
+            "Hay sacrificios invisibles.",
+            "Este proyecto no busca likes. Busca respeto."
+        ],
+        "cta": "Conocer la mentalidad"
+    },
+    "mindset": {
+        "headline": "El alto rendimiento no empieza en la competencia.\nEmpieza cuando nadie está viendo.",
+        "body": [
+            "Entrenar más de 33 horas a la semana no es motivación. Es compromiso.",
+            "Mientras muchos buscan resultados rápidos, este proyecto apuesta por el largo plazo. Porque ahí es donde se separan los buenos de los grandes."
+        ],
+        "cta": "Ver cómo se entrena este proyecto"
+    },
+    "hard_data": [
+        {
+            "value": "+33 h/semana",
+            "label": "Entrenamiento, recuperación y preparación mental."
+        },
+        {
+            "value": "$400k–600k MXN",
+            "label": "Costo anual por temporada (proyección realista)."
+        },
+        {
+            "value": "Mundiales",
+            "label": "Clasificado: Australia · Pontevedra · Málaga"
+        },
+        {
+            "value": "Road to 2032",
+            "label": "Proceso olímpico, no promesa vacía."
+        }
+    ],
+    "athlete": {
+        "headline": "Memo no es el proyecto.\nEs el primer atleta del proyecto.",
+        "body": "Empezó a los 11 años. Hoy entrena dos veces al día. Ha sacrificado tiempo, comodidad y dinero por una sola razón: construir algo que valga la pena.",
+        "cta": "Conocer la historia completa"
+    },
+    "results": {
+        "headline": "Los resultados no definen el proyecto.\nConfirman el proceso.",
+        "cta": "Ver resultados detallados"
+    },
+    "support": {
+        "headline": "Impulsar Memo Project no es ayudar.",
+        "subheadline": "Es formar parte de un proceso real de alto rendimiento.",
+        "cta": "Impulsar Memo Project"
+    },
+    "sponsors": {
+        "headline": "Memo Project busca marcas que entiendan que el alto rendimiento se construye, no se improvisa.",
+        "cta": "Convertirse en socio del proyecto"
+    },
+    "closing": {
+        "copy": "Este proyecto no termina hoy. Apenas está comenzando.\nY solo avanza con personas que entienden el valor del proceso.",
+        "cta": "Explorar Memo Project"
+    }
+}

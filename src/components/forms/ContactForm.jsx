@@ -1,26 +1,54 @@
-import React from 'react';
-import { useForm } from '@formspree/react';
-import { useForm as useHookForm } from 'react-hook-form';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { FORMSPREE_CONFIG } from '../../config';
 
 const ContactForm = () => {
-    const [state, handleSubmit] = useForm(FORMSPREE_CONFIG.CONTACT_FORM_ID);
-    const { register, handleSubmit: hookSubmit, formState: { errors } } = useHookForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [submitting, setSubmitting] = useState(false);
+    const [submissionError, setSubmissionError] = useState(null);
     const navigate = useNavigate();
 
-    const onSubmit = (data) => {
-        handleSubmit(data);
+    const onSubmit = async (data) => {
+        setSubmitting(true);
+        setSubmissionError(null);
+
+        try {
+            // Encode data for Netlify
+            const encode = (data) => {
+                return Object.keys(data)
+                    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+                    .join("&");
+            };
+
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", ...data })
+            });
+
+            // Redirect on success
+            setTimeout(() => navigate('/gracias'), 500);
+        } catch (error) {
+            console.error("Form error:", error);
+            setSubmissionError("Hubo un error al enviar el mensaje. Por favor intenta de nuevo.");
+            setSubmitting(false);
+        }
     };
 
-    if (state.succeeded) {
-        setTimeout(() => navigate('/gracias'), 500);
-        return <div className="text-center p-4">Enviando mensaje...</div>;
-    }
-
     return (
-        <form onSubmit={hookSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <input type="text" name="_gotcha" style={{ display: 'none' }} />
+        <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            onSubmit={handleSubmit(onSubmit)}
+            style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
+        >
+            <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot */}
+            <div hidden>
+                <input name="bot-field" />
+            </div>
 
             <div>
                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Nombre</label>
@@ -64,8 +92,10 @@ const ContactForm = () => {
                 {errors.message && <span style={{ color: '#ef4444', fontSize: '0.8rem' }}>Escribe un mensaje</span>}
             </div>
 
-            <button type="submit" disabled={state.submitting} className="btn btn-outline" style={{ wiodth: '100%' }}>
-                {state.submitting ? 'Enviando...' : 'Enviar Mensaje'}
+            {submissionError && <div style={{ color: '#ef4444', fontSize: '0.9rem', textAlign: 'center' }}>{submissionError}</div>}
+
+            <button type="submit" disabled={submitting} className="btn btn-outline" style={{ wiodth: '100%' }}>
+                {submitting ? 'Enviando...' : 'Enviar Mensaje'}
             </button>
         </form>
     );

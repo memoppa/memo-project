@@ -1,46 +1,61 @@
 [
     {
-        "id": "monthly",
-        "title": "Impulso Mensual",
-        "price": "$200",
-        "period": "/ mes",
-        "icon": "Heart",
-        "features": [
-            "Mención en web",
-            "Newsletter mensual",
-            "Acceso a grupo exclusivo"
+        "id": "free",
+        "title": "Impulso Libre",
+        "subtitle": "Impulso único, sin compromiso.",
+        "description": "Apoya el proyecto una sola vez y forma parte del camino.",
+        "amounts": [
+            "$300",
+            "$500",
+            "$1,000"
         ],
-        "cta": "Unirse al equipo",
+        "icon": "Zap",
+        "color": "var(--accent-color)",
+        "cta": "Impulsar ahora",
         "highlight": false
     },
     {
-        "id": "event",
-        "title": "Padrino de Competencia",
-        "price": "$1,500",
-        "period": "/ evento",
-        "icon": "Trophy",
-        "features": [
-            "Logo en redes durante evento",
-            "Video de agradecimiento",
-            "Mención especial",
-            "Reporte de resultados"
+        "id": "monthly",
+        "title": "Impulso Mensual",
+        "subtitle": "El corazón del proyecto.",
+        "description": "Acompaña el proceso mes a mes y sé parte de la construcción a largo plazo.",
+        "amounts": [
+            "$200 Base",
+            "$500 Compromiso",
+            "$1,000 Alto Impacto"
         ],
-        "cta": "Apoyar Evento",
+        "icon": "Heart",
+        "color": "#ef4444",
+        "cta": "Impulsar mensualmente",
         "highlight": true
     },
     {
-        "id": "partner",
-        "title": "Aliado Bronce/Plata",
-        "price": "A medida",
-        "period": "",
-        "icon": "Zap",
-        "features": [
-            "Presencia de marca en uniforme",
-            "Activaciones presenciales",
-            "Deducibilidad de impuestos",
-            "Colaboración a largo plazo"
+        "id": "event",
+        "title": "Impulso por Competencia",
+        "subtitle": "Momentos clave.",
+        "description": "Impulsa una competencia clave y acompaña el resultado (viajes, inscripción).",
+        "amounts": [
+            "$500",
+            "$1,500",
+            "$3,000"
         ],
-        "cta": "Contactar para Alianza",
+        "icon": "Flag",
+        "color": "#fbbf24",
+        "cta": "Impulsar esta competencia",
+        "highlight": false
+    },
+    {
+        "id": "project",
+        "title": "Impulso Proyecto",
+        "subtitle": "Alto Impacto.",
+        "description": "Apoyo estratégico para quienes creen en el proyecto a mediano y largo plazo.",
+        "amounts": [
+            "Desde $10,000",
+            "Personalizado"
+        ],
+        "icon": "Trophy",
+        "color": "#8b5cf6",
+        "cta": "Hablar directamente",
         "highlight": false
     }
 ]
