@@ -28,11 +28,11 @@ const Support = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', marginBottom: '16px', lineHeight: 1.1 }}>
-                        Impulsar Memo Project
+                        Pertenecer al Proyecto
                     </h2>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
-                        No es una donación.<br />
-                        Es ser parte de un proyecto real de alto rendimiento.
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
+                        Impulsar Memo Project no es ayudar a una persona. <br />
+                        <strong>Es formar parte de un proceso real de alto rendimiento.</strong>
                     </p>
                 </div>
 
@@ -107,7 +107,7 @@ const Support = () => {
                                 className={tier.highlight ? "btn btn-primary" : "btn btn-outline"}
                                 style={{ width: '100%', textAlign: 'center', justifyContent: 'center' }}
                             >
-                                {tier.cta}
+                                {tier.id === 'project' ? 'Hacernos Aliados' : 'Unirme al Equipo'}
                             </Link>
                         </div>
                     ))}
@@ -116,7 +116,7 @@ const Support = () => {
                 {/* Transparency Footnote */}
                 <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', maxWidth: '700px', margin: '0 auto' }}>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                        <strong style={{ color: 'var(--text-secondary)' }}>Transparencia total:</strong> Los apoyos se destinan directamente a viajes, inscripciones, equipo técnico, coaching, nutrición y recuperación física. Memo Project opera con transparencia y visión a largo plazo.
+                        <strong style={{ color: 'var(--text-secondary)' }}>Transparencia total:</strong> Los apoyos se destinan directamente a viajes, inscripciones, equipo técnico, coaching y  recuperación. Aquí no compras resultados, acompañas el camino.
                     </p>
                 </div>
             </div>

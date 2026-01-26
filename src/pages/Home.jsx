@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../sections/Hero';
-import Manifesto from '../sections/Manifesto'; // V2
-import Mindset from '../sections/Mindset'; // V2
-import HardData from '../sections/HardData'; // V2
+import Manifesto from '../sections/Manifesto'; // V2 High Density
+import Differentiation from '../sections/Differentiation'; // New
+import WeekGlance from '../sections/WeekGlance'; // New
 import AthleteSystem from '../sections/AthleteSystem'; // V2
 import Results from '../sections/Results'; // V2
 import Roadmap from '../sections/Roadmap';
@@ -35,13 +35,13 @@ const Home = () => {
 
             <Hero />
 
-            <span id="el-proyecto"></span>
+            <span id="manifiesto"></span>
             <Manifesto />
 
-            <span id="mentalidad"></span>
-            <Mindset />
+            <Differentiation />
 
-            <HardData />
+            <span id="evidencia"></span>
+            <WeekGlance />
 
             <span id="roadmap"></span>
             <Roadmap />
