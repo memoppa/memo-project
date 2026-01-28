@@ -4,7 +4,29 @@ import { Link } from 'react-router-dom';
 
 const WeekGlance = () => {
     return (
-        <section className="section-padding" style={{ background: 'var(--bg-primary)' }}>
+        <section className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Cinematic Background */}
+            <div style={{
+                position: 'absolute',
+                top: 0, left: 0, width: '100%', height: '100%',
+                zIndex: -1
+            }}>
+                <div style={{
+                    position: 'absolute',
+                    top: 0, left: 0, width: '100%', height: '100%',
+                    background: 'rgba(10, 10, 10, 0.9)', // Slightly lighter overlay for data readability
+                    zIndex: 2
+                }}></div>
+                <img
+                    src="/img/grid_4.jpg" // Pool/Bike photo
+                    alt="Week Background"
+                    style={{
+                        width: '100%', height: '100%', objectFit: 'cover',
+                        filter: 'grayscale(100%)'
+                    }}
+                />
+            </div>
+
             <div className="container">
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '60px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>

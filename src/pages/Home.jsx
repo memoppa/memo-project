@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../sections/Hero';
 import Manifesto from '../sections/Manifesto'; // V2 High Density
-import VisualGrid from '../sections/VisualGrid'; // New Phase 6 "The Grind"
 import Differentiation from '../sections/Differentiation'; // New
 import WeekGlance from '../sections/WeekGlance'; // New
 import AthleteSystem from '../sections/AthleteSystem'; // V2
@@ -26,9 +25,6 @@ const Home = () => {
         <div style={{ background: 'var(--bg-primary)', overflowX: 'hidden' }}>
 
             <Hero />
-
-            {/* The Evidence Loop */}
-            <VisualGrid />
 
             <span id="manifiesto"></span>
             <Manifesto />
