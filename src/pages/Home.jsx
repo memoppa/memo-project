@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Hero from '../sections/Hero';
-import Manifesto from '../sections/Manifesto'; // V2 High Density
-import Differentiation from '../sections/Differentiation'; // New
-import WeekGlance from '../sections/WeekGlance'; // New
-import AthleteSystem from '../sections/AthleteSystem'; // V2
-import Roadmap from '../sections/Roadmap';
-import Support from '../sections/Support';
+import Manifesto from '../sections/Manifesto';
+import HardData from '../sections/HardData';
 import Sponsors from '../sections/Sponsors';
+import { ArrowRight } from 'lucide-react';
 
 const Home = () => {
     const { hash } = useLocation();
@@ -18,6 +15,8 @@ const Home = () => {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
+        } else {
+            window.scrollTo(0, 0);
         }
     }, [hash]);
 
@@ -26,23 +25,67 @@ const Home = () => {
 
             <Hero />
 
-            <span id="manifiesto"></span>
             <Manifesto />
 
-            <Differentiation />
+            <HardData />
 
-            <span id="evidencia"></span>
-            <WeekGlance />
+            {/* Gateways / Deep Dive */}
+            <section className="section-padding">
+                <div className="container">
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '2px', // Minimal gap for editorial grid look
+                        background: '#222', // Border color
+                        border: '1px solid #222'
+                    }}>
+                        {[
+                            { title: 'El Proyecto', desc: 'Mentalidad y Visión.', link: '/proyecto', bg: '/img/grid_1.jpg' },
+                            { title: 'El Camino', desc: 'Proceso y Estructura.', link: '/camino', bg: '/img/grid_2.jpg' },
+                            { title: 'El Atleta', desc: 'Disciplina e Intimidad.', link: '/atleta', bg: '/img/grid_3.jpg' },
+                            { title: 'Resultados', desc: 'Evidencia tangible.', link: '/resultados', bg: '/img/story-main.jpg' }
+                        ].map((item, i) => (
+                            <Link to={item.link} key={i} style={{
+                                position: 'relative',
+                                height: '300px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'flex-end',
+                                padding: '30px',
+                                textDecoration: 'none',
+                                overflow: 'hidden'
+                            }}>
+                                {/* Background Image with Overlay */}
+                                <div style={{
+                                    position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                                    zIndex: 0
+                                }}>
+                                    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', transition: 'background 0.3s' }}></div>
+                                    <img src={item.bg} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)' }} />
+                                </div>
 
-            <span id="roadmap"></span>
-            <Roadmap />
+                                <div style={{ position: 'relative', zIndex: 1, transition: 'transform 0.3s' }}>
+                                    <h3 style={{ fontSize: '1.8rem', color: 'white', marginBottom: '5px' }}>{item.title}</h3>
+                                    <p style={{ color: '#aaa', fontSize: '1rem' }}>{item.desc}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
-            <span id="historia"></span>
-            <AthleteSystem />
-
-            {/* The Investment */}
-            <span id="support"></span>
-            <Support />
+            {/* Impulse CTA */}
+            <section className="section-padding" style={{ textAlign: 'center', background: '#0a0a0a' }}>
+                <div className="container">
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>No es donación. Es involucramiento.</h2>
+                    <p style={{ color: '#888', maxWidth: '600px', margin: '0 auto 40px' }}>
+                        Impulsar Memo Project es sostener una estructura real, no financiar una promesa.
+                    </p>
+                    <Link to="/impulsar" className="btn btn-primary" style={{ padding: '16px 40px' }}>
+                        Formar Parte <ArrowRight size={20} />
+                    </Link>
+                </div>
+            </section>
 
             <Sponsors />
         </div>

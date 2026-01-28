@@ -18,10 +18,10 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Proyecto', path: isHome ? '#project' : '/#project' },
-        { name: 'Historia', path: isHome ? '#story' : '/#story' },
-        { name: 'Roadmap', path: isHome ? '#roadmap' : '/#roadmap' },
-        { name: 'Impacto', path: isHome ? '#impact' : '/#impact' },
+        { name: 'Proyecto', path: '/proyecto' },
+        { name: 'Camino', path: '/camino' },
+        { name: 'Atleta', path: '/atleta' },
+        { name: 'Resultados', path: '/resultados' },
     ];
 
     console.log('Mobile Menu Open:', mobileMenuOpen); // Debugging
@@ -36,16 +36,16 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className="desktop-menu">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.name}
-                            href={link.path}
+                            to={link.path}
                             className="nav-link"
                         >
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
-                    <Link to="/apoyar" className="btn btn-primary">
-                        Apoyar Proyecto
+                    <Link to="/impulsar" className="btn btn-primary">
+                        Impulsar
                     </Link>
                 </div>
 
@@ -61,22 +61,22 @@ const Navbar = () => {
                 {/* Mobile Menu Overlay */}
                 <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.name}
-                            href={link.path}
+                            to={link.path}
                             onClick={() => setMobileMenuOpen(false)}
                             className="mobile-nav-link"
                         >
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
                     <Link
-                        to="/apoyar"
+                        to="/impulsar"
                         className="btn btn-primary"
                         onClick={() => setMobileMenuOpen(false)}
                         style={{ padding: '15px 30px', fontSize: '1.2rem' }}
                     >
-                        Apoyar Proyecto
+                        Impulsar
                     </Link>
                 </div>
             </div>
