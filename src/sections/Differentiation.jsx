@@ -13,7 +13,7 @@ const Differentiation = () => {
                 <div style={{
                     position: 'absolute',
                     top: 0, left: 0, width: '100%', height: '100%',
-                    background: 'rgba(5, 5, 5, 0.92)', // Very dark overlay
+                    background: 'rgba(5, 5, 5, 0.7)', // Reduced opacity so photo is visible
                     zIndex: 2
                 }}></div>
                 <img

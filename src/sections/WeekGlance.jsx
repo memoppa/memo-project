@@ -14,7 +14,7 @@ const WeekGlance = () => {
                 <div style={{
                     position: 'absolute',
                     top: 0, left: 0, width: '100%', height: '100%',
-                    background: 'rgba(10, 10, 10, 0.9)', // Slightly lighter overlay for data readability
+                    background: 'rgba(10, 10, 10, 0.7)', // Lighter overlay
                     zIndex: 2
                 }}></div>
                 <img
