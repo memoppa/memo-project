@@ -10,18 +10,16 @@ const NewsletterForm = () => {
     const onSubmit = async (data) => {
         setSubmitting(true);
         try {
-            // Encode data for Netlify
-            const encode = (data) => {
-                return Object.keys(data)
-                    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-                    .join("&");
-            };
-
-            await fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "newsletter", ...data })
+            const response = await fetch('/api/submit-form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'newsletter',
+                    data: data
+                })
             });
+
+            if (!response.ok) throw new Error('Network response was not ok');
 
             setShowSuccess(true);
             setSubmitting(false);
@@ -51,19 +49,9 @@ const NewsletterForm = () => {
 
     return (
         <form
-            name="newsletter"
-            method="POST"
-            data-netlify="true"
             onSubmit={handleSubmit(onSubmit)}
             style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
         >
-            <input type="hidden" name="form-name" value="newsletter" />
-
-            {/* Honeypot */}
-            <div hidden>
-                <input name="bot-field" />
-            </div>
-
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
                 Recibe avances reales del proyecto, competencias y camino internacional.
             </p>

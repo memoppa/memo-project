@@ -13,18 +13,16 @@ const SponsorForm = () => {
         setSubmissionError(null);
 
         try {
-            // Encode data for Netlify
-            const encode = (data) => {
-                return Object.keys(data)
-                    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-                    .join("&");
-            };
-
-            await fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "sponsor", ...data })
+            const response = await fetch('/api/submit-form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'sponsor',
+                    data: data
+                })
             });
+
+            if (!response.ok) throw new Error('Network response was not ok');
 
             // Redirect on success
             setTimeout(() => navigate('/gracias'), 500);
@@ -37,20 +35,9 @@ const SponsorForm = () => {
 
     return (
         <form
-            name="sponsor"
-            method="POST"
-            data-netlify="true"
             onSubmit={handleSubmit(onSubmit)}
             style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
         >
-            {/* Netlify Form Name Hidden Field */}
-            <input type="hidden" name="form-name" value="sponsor" />
-
-            {/* Honeypot for spam protection */}
-            <div hidden>
-                <input name="bot-field" />
-            </div>
-
             <div>
                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Nombre / Empresa *</label>
                 <input

@@ -13,18 +13,16 @@ const ContactForm = () => {
         setSubmissionError(null);
 
         try {
-            // Encode data for Netlify
-            const encode = (data) => {
-                return Object.keys(data)
-                    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-                    .join("&");
-            };
-
-            await fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", ...data })
+            const response = await fetch('/api/submit-form', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'contact',
+                    data: data
+                })
             });
+
+            if (!response.ok) throw new Error('Network response was not ok');
 
             // Redirect on success
             setTimeout(() => navigate('/gracias'), 500);
@@ -37,19 +35,9 @@ const ContactForm = () => {
 
     return (
         <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
             onSubmit={handleSubmit(onSubmit)}
             style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
         >
-            <input type="hidden" name="form-name" value="contact" />
-
-            {/* Honeypot */}
-            <div hidden>
-                <input name="bot-field" />
-            </div>
-
             <div>
                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem' }}>Nombre</label>
                 <input
