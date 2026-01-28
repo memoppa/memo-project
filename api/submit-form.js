@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         // 2. Send Email Notification (Admin Alert)
         if (type === 'sponsor' || type === 'contact') {
             await resend.emails.send({
-                from: 'Memo Project <no-reply@memoproject.com>', // User needs to verify domain later
+                from: 'onboarding@resend.dev', // Default valid sender for testing
                 to: process.env.ADMIN_EMAIL || 'tucorreo@ejemplo.com',
                 subject: `Nuevo Lead: ${data.name || 'Suscriptor'}`,
                 html: `<p>Nuevo contacto de tipo: <strong>${data.type || 'General'}</strong></p>
