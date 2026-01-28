@@ -1,10 +1,41 @@
 import React from 'react';
+import profileData from '../content/profile.json';
 
 const Manifesto = () => {
     return (
-        <section id="manifiesto" className="section-padding" style={{ background: 'var(--bg-primary)' }}>
-            <div className="container">
-                <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+        <section id="manifiesto" className="section-padding" style={{
+            position: 'relative',
+            background: 'black',
+            overflow: 'hidden'
+        }}>
+            {/* Background Image with Overlay */}
+            <div style={{
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: 0
+            }}>
+                <img
+                    src={profileData.images.manifesto_bg}
+                    alt="Training Focus"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        opacity: 0.4
+                    }}
+                />
+                <div style={{
+                    position: 'absolute',
+                    top: 0, left: 0,
+                    width: '100%', height: '100%',
+                    background: 'linear-gradient(90deg, #000 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 100%)'
+                }}></div>
+            </div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                <div style={{ maxWidth: '800px', margin: '0', textAlign: 'left' }}>
                     <p style={{
                         color: 'var(--accent-color)',
                         fontWeight: 700,
@@ -22,7 +53,7 @@ const Manifesto = () => {
                         color: 'white'
                     }}>
                         La mayoría ve el resultado. <br />
-                        <span style={{ color: 'var(--text-secondary)' }}>Pocos entienden el proceso.</span>
+                        <span style={{ color: '#aaa' }}>Pocos entienden el proceso.</span>
                     </h2>
 
                     <div style={{

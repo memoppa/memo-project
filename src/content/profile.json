@@ -10,8 +10,11 @@
     "email": "hola@memoproject.com"
   },
   "images": {
-    "hero_video": "/img/hero-bg.mp4",
-    "hero_poster": "/img/hero-static.jpg",
-    "story_main": "/img/story-main.jpg"
+    "hero_video": "/img/hero_loop_v2.mp4",
+    "hero_poster": "/img/hero_poster_v2.jpg",
+    "story_main": "/img/story-main.jpg",
+    "manifesto_bg": "/img/manifesto_v2.jpg",
+    "week_bg": "/img/week_v2.jpg",
+    "support_bg": "/img/support_v2.jpg"
   }
 }
