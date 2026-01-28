@@ -15,6 +15,14 @@
     "story_main": "/img/story-main.jpg",
     "manifesto_bg": "/img/manifesto_v2.jpg",
     "week_bg": "/img/week_v2.jpg",
-    "support_bg": "/img/support_v2.jpg"
+    "support_bg": "/img/support_v2.jpg",
+    "grid": [
+      "/img/grid_1.jpg",
+      "/img/grid_2.jpg",
+      "/img/grid_3.jpg",
+      "/img/grid_4.jpg",
+      "/img/grid_5.jpg",
+      "/img/grid_6.jpg"
+    ]
   }
 }

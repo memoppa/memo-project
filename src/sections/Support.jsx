@@ -28,11 +28,11 @@ const Support = () => {
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', marginBottom: '16px', lineHeight: 1.1 }}>
-                        Pertenecer al Proyecto
+                        Ronda Semilla
                     </h2>
                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
-                        Impulsar Memo Project no es ayudar a una persona. <br />
-                        <strong>Es formar parte de un proceso real de alto rendimiento.</strong>
+                        No busco donaciones. Busco <strong>socios fundadores</strong>.<br />
+                        Tu aporte hoy construye la medalla de mañana.
                     </p>
                 </div>
 
@@ -75,7 +75,7 @@ const Support = () => {
                                         padding: '4px 10px', borderRadius: '100px',
                                         letterSpacing: '0.05em'
                                     }}>
-                                        RECOMENDADO
+                                        POPULAR
                                     </span>
                                 )}
                             </div>
@@ -107,7 +107,7 @@ const Support = () => {
                                 className={tier.highlight ? "btn btn-primary" : "btn btn-outline"}
                                 style={{ width: '100%', textAlign: 'center', justifyContent: 'center' }}
                             >
-                                {tier.id === 'project' ? 'Hacernos Aliados' : 'Unirme al Equipo'}
+                                {tier.id === 'project' ? 'Pitch Deck' : 'Invertir ahora'}
                             </Link>
                         </div>
                     ))}
@@ -116,7 +116,7 @@ const Support = () => {
                 {/* Transparency Footnote */}
                 <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '40px', maxWidth: '700px', margin: '0 auto' }}>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                        <strong style={{ color: 'var(--text-secondary)' }}>Transparencia total:</strong> Los apoyos se destinan directamente a viajes, inscripciones, equipo técnico, coaching y  recuperación. Aquí no compras resultados, acompañas el camino.
+                        <strong style={{ color: 'var(--text-secondary)' }}>Retorno de Inversión (ROI):</strong> A diferencia de una startup, aquí el dividendo es emocional y social. Eres parte de la historia. Recibes reportes trimestrales de progreso y acceso al círculo interno.
                     </p>
                 </div>
             </div>

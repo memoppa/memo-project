@@ -53,18 +53,21 @@ const Hero = () => {
                 <div style={{ maxWidth: '900px' }}>
 
                     {/* H1 - High Impact */}
+                    {/* H1 - High Impact */}
                     <h1 style={{
-                        fontSize: 'clamp(3rem, 5vw, 5rem)',
-                        lineHeight: 1.1,
+                        fontSize: 'clamp(3rem, 6vw, 6rem)',
+                        lineHeight: 1,
                         marginBottom: '24px',
                         letterSpacing: '-0.02em',
                         fontWeight: 800
                     }}>
-                        No es un sueño. <br />
+                        Únete a la historia <br />
                         <span style={{
-                            color: 'var(--accent-color)',
+                            color: 'transparent',
+                            WebkitTextStroke: '1px white',
+                            opacity: 0.8
                         }}>
-                            Es un proyecto de alto rendimiento.
+                            antes de que suceda.
                         </span>
                     </h1>
 
@@ -72,39 +75,22 @@ const Hero = () => {
                     <p style={{
                         fontSize: '1.25rem',
                         color: '#d4d4d4', // Lighter than text-secondary for better contrast against dark video
-                        maxWidth: '720px',
+                        maxWidth: '500px',
                         marginBottom: '40px',
                         lineHeight: 1.6,
                         fontWeight: 400
                     }}>
-                        Memo Project es la construcción estructurada de un triatleta con proyección internacional, entrenando más de 33 horas por semana, con visión olímpica y un plan a largo plazo.
+                        Memo Project: Construyendo un triatleta olímpico desde cero.
                     </p>
 
-                    {/* Data Grid (Micro-blocks) */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                        gap: '20px',
-                        marginBottom: '50px',
-                        borderTop: '1px solid rgba(255,255,255,0.1)',
-                        borderBottom: '1px solid rgba(255,255,255,0.1)',
-                        padding: '24px 0'
-                    }}>
+                    <div style={{ display: 'flex', gap: '40px', marginBottom: '50px' }}>
                         <div>
-                            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'white' }}>+33 h</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Entrenamiento Semanal</div>
+                            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 700, color: 'var(--accent-color)' }}>2032</span>
+                            <span style={{ fontSize: '0.8rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Visión Brisbane</span>
                         </div>
                         <div>
-                            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'white' }}>High Perf</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Estructura Profesional</div>
-                        </div>
-                        <div>
-                            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'white' }}>Mundiales</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Clasificados & Objetivo</div>
-                        </div>
-                        <div>
-                            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'white' }}>2032</div>
-                            <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Visión Brisbane</div>
+                            <span style={{ display: 'block', fontSize: '2rem', fontWeight: 700, color: 'white' }}>+33h</span>
+                            <span style={{ fontSize: '0.8rem', color: '#aaa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Entrenamiento / Sem</span>
                         </div>
                     </div>
 
